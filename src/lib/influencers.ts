@@ -1,10 +1,10 @@
-import { createServerSupabaseClient } from './supabase-server';
+import { createServerSupabaseClientSimple } from './supabase-server';
 import { supabase } from './supabase';
 import { Influencer, InfluencerFormData } from '@/types';
 
 export async function getAllInfluencers(): Promise<Influencer[]> {
   try {
-    const supabase = await createServerSupabaseClient();
+    const supabase = createServerSupabaseClientSimple();
     const { data, error } = await supabase
       .from('influencers')
       .select('*');
@@ -37,7 +37,7 @@ export async function getAllInfluencers(): Promise<Influencer[]> {
 
 export async function getInfluencerBySlug(slug: string): Promise<Influencer | null> {
   try {
-    const supabase = await createServerSupabaseClient();
+    const supabase = createServerSupabaseClientSimple();
     const { data, error } = await supabase
       .from('influencers')
       .select('*')
@@ -63,7 +63,7 @@ export async function getInfluencerBySlug(slug: string): Promise<Influencer | nu
 
 export async function getInfluencerById(id: string): Promise<Influencer | null> {
   try {
-    const supabase = await createServerSupabaseClient();
+    const supabase = createServerSupabaseClientSimple();
     const { data, error } = await supabase
       .from('influencers')
       .select('*')

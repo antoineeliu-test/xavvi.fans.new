@@ -4,8 +4,8 @@ import InfluencerForm from '@/components/admin/InfluencerForm';
 import { getInfluencerById } from '@/lib/influencers';
 
 export const metadata: Metadata = {
-  title: 'Edit Influencer - Xavvi.fans',
-  description: 'Edit an existing influencer on the Xavvi.fans platform',
+  title: 'Edit Influencer - xavvi.fans',
+  description: 'Edit an existing influencer on the xavvi.fans platform',
 };
 
 interface EditInfluencerPageProps {

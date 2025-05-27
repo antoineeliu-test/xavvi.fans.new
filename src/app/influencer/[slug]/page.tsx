@@ -15,12 +15,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!influencer) {
     return {
-      title: 'Influencer Not Found - Xavvi.fans',
+      title: 'Influencer Not Found - xavvi.fans',
     };
   }
   
   return {
-    title: `${influencer.name} - Influencer Profile | Xavvi.fans`,
+    title: `${influencer.name} - xavvi.fans`,
     description: influencer.bio?.substring(0, 160) || `View ${influencer.name}&apos;s profile and connect on social media.`,
   };
 }

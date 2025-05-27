@@ -3,7 +3,7 @@ import InfluencerGrid from '@/components/influencers/InfluencerGrid';
 import { getAllInfluencers } from '@/lib/influencers';
 
 export const metadata: Metadata = {
-  title: 'Xavvi.fans | Discover Top Social Media Influencers',
+  title: 'xavvi.fans',
   description: 'Browse and connect with top social media influencers across Instagram, TikTok, YouTube, and X.',
 };
 

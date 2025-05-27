@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import AuthTestClient from './AuthTestClient';
 
 export const metadata: Metadata = {
-  title: 'Auth Test - Xavvi.fans',
+  title: 'Auth Test - xavvi.fans',
   description: 'Test authentication functionality',
 };
 

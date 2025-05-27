@@ -4,7 +4,9 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-600 mb-4 md:mb-0">
-            © {new Date().getFullYear()} Xavvi.fans — Influencer Directory
+            <p className="text-center text-gray-400">
+              © {new Date().getFullYear()} xavvi.fans — Influencer Directory
+            </p>
           </div>
           <div className="flex space-x-4">
             <a href="#" className="text-gray-600 hover:text-pink-600">

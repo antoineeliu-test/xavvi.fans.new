@@ -15,8 +15,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "InfluencerHub | Influencer Directory",
+  title: "xavvi.fans",
   description: "Discover and connect with top social media influencers",
+  icons: {
+    icon: [
+      {
+        url: "/xavvi_small_logo.png",
+        sizes: "any",
+        type: "image/png",
+      },
+    ],
+    shortcut: "/xavvi_small_logo.png",
+    apple: "/xavvi_small_logo.png",
+  },
 };
 
 export default function RootLayout({

@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import InfluencerForm from '@/components/admin/InfluencerForm';
 
 export const metadata: Metadata = {
-  title: 'Add New Influencer - Xavvi.fans',
-  description: 'Add a new influencer to the Xavvi.fans platform',
+  title: 'Add New Influencer - xavvi.fans',
+  description: 'Add a new influencer to the xavvi.fans platform',
 };
 
 export default function AddInfluencerPage() {

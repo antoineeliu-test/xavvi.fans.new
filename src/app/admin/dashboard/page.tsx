@@ -6,8 +6,8 @@ import AdminInfluencerList from '@/components/admin/AdminInfluencerList';
 import SignOutButton from '@/components/admin/SignOutButton';
 
 export const metadata: Metadata = {
-  title: 'Admin Dashboard - Xavvi.fans',
-  description: 'Manage influencers on the Xavvi.fans platform',
+  title: 'Admin Dashboard - xavvi.fans',
+  description: 'Manage influencers on the xavvi.fans platform',
 };
 
 // Force dynamic rendering and disable caching for this page

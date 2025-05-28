@@ -10,27 +10,20 @@ export default function Header() {
   
   return (
     <header className="bg-white shadow-sm">
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-2">
         <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center">
             {/* Your logo */}
-            <div className="flex items-center">
-              <img 
-                src="/xavvi_small_logo.png" 
-                alt="Xavvi Logo" 
-                width="40" 
-                height="40" 
-                className="object-contain w-10 h-10"
-                onError={(e) => {
-                  console.error('Logo failed to load:', e);
-                }}
-              />
-            </div>
-            
-            {/* Brand text */}
-            <span className="text-xl font-bold text-pink-600 hover:text-pink-700">
-              xavvi.fans
-            </span>
+            <img 
+              src="/xavvi_logo.png" 
+              alt="Xavvi Logo" 
+              width="100" 
+              height="100" 
+              className="object-contain w-[100px] h-[100px]"
+              onError={(e) => {
+                console.error('Logo failed to load:', e);
+              }}
+            />
           </Link>
           
           <nav className="flex space-x-6 items-center">

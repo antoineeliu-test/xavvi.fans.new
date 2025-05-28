@@ -15,7 +15,7 @@ export default function Header() {
           <Link href="/" className="flex items-center">
             {/* Your logo */}
             <img 
-              src="/xavvi_logo.png" 
+              src="/xavvi_logo.new.png" 
               alt="Xavvi Logo" 
               width="100" 
               height="100" 

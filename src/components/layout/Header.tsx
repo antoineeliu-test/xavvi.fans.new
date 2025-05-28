@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { FiUser } from 'react-icons/fi';
 
@@ -15,7 +14,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-2">
             {/* Your logo */}
-            <Image src="/xavvi_logo.png" alt="Xavvi Logo" width={120} height={120} />
+            <img src="/xavvi_logo.png" alt="Xavvi Logo" width="120" height="120" />
             
             {/* Optional: Add text alongside logo */}
             {/* <span className="text-2xl font-bold text-pink-600 hover:text-pink-700">

@@ -5,29 +5,29 @@ import { Influencer, InfluencerFormData } from '@/types';
 export async function getAllInfluencers(): Promise<Influencer[]> {
   try {
     const supabase = createServerSupabaseClientSimple();
-    const { data, error } = await supabase
-      .from('influencers')
-      .select('*');
-      
-    if (error) {
-      console.error('Error fetching influencers:', error);
-      throw new Error('Failed to fetch influencers');
-    }
+  const { data, error } = await supabase
+    .from('influencers')
+    .select('*');
     
-    // Sort influencers by total follower count (descending)
-    const sortedData = data.sort((a, b) => {
-      const getTotalFollowers = (influencer: Influencer) => {
-        return (influencer.instagram_followers || 0) +
-               (influencer.tiktok_followers || 0) +
-               (influencer.youtube_followers || 0) +
-               (influencer.twitter_followers || 0) +
-               (influencer.facebook_followers || 0);
-      };
-      
-      return getTotalFollowers(b) - getTotalFollowers(a);
-    });
+  if (error) {
+    console.error('Error fetching influencers:', error);
+    throw new Error('Failed to fetch influencers');
+  }
+  
+  // Sort influencers by total follower count (descending)
+  const sortedData = data.sort((a, b) => {
+    const getTotalFollowers = (influencer: Influencer) => {
+      return (influencer.instagram_followers || 0) +
+             (influencer.tiktok_followers || 0) +
+             (influencer.youtube_followers || 0) +
+             (influencer.twitter_followers || 0) +
+             (influencer.facebook_followers || 0);
+    };
     
-    return sortedData;
+    return getTotalFollowers(b) - getTotalFollowers(a);
+  });
+  
+  return sortedData;
   } catch (error) {
     console.error('Error in getAllInfluencers:', error);
     // Return empty array instead of throwing to prevent page crashes
@@ -38,23 +38,23 @@ export async function getAllInfluencers(): Promise<Influencer[]> {
 export async function getInfluencerBySlug(slug: string): Promise<Influencer | null> {
   try {
     const supabase = createServerSupabaseClientSimple();
-    const { data, error } = await supabase
-      .from('influencers')
-      .select('*')
-      .eq('slug', slug)
-      .single();
-      
-    if (error) {
-      if (error.code === 'PGRST116') {
-        // PGRST116 error code means no rows were returned
-        return null;
-      }
-      
-      console.error(`Error fetching influencer with slug ${slug}:`, error);
-      throw new Error('Failed to fetch influencer');
+  const { data, error } = await supabase
+    .from('influencers')
+    .select('*')
+    .eq('slug', slug)
+    .single();
+    
+  if (error) {
+    if (error.code === 'PGRST116') {
+      // PGRST116 error code means no rows were returned
+      return null;
     }
     
-    return data;
+    console.error(`Error fetching influencer with slug ${slug}:`, error);
+    throw new Error('Failed to fetch influencer');
+  }
+  
+  return data;
   } catch (error) {
     console.error(`Error in getInfluencerBySlug for slug ${slug}:`, error);
     return null;
@@ -64,23 +64,23 @@ export async function getInfluencerBySlug(slug: string): Promise<Influencer | nu
 export async function getInfluencerById(id: string): Promise<Influencer | null> {
   try {
     const supabase = createServerSupabaseClientSimple();
-    const { data, error } = await supabase
-      .from('influencers')
-      .select('*')
-      .eq('id', id)
-      .single();
-      
-    if (error) {
-      if (error.code === 'PGRST116') {
-        // PGRST116 error code means no rows were returned
-        return null;
-      }
-      
-      console.error(`Error fetching influencer with id ${id}:`, error);
-      throw new Error('Failed to fetch influencer');
+  const { data, error } = await supabase
+    .from('influencers')
+    .select('*')
+    .eq('id', id)
+    .single();
+    
+  if (error) {
+    if (error.code === 'PGRST116') {
+      // PGRST116 error code means no rows were returned
+      return null;
     }
     
-    return data;
+    console.error(`Error fetching influencer with id ${id}:`, error);
+    throw new Error('Failed to fetch influencer');
+  }
+  
+  return data;
   } catch (error) {
     console.error(`Error in getInfluencerById for id ${id}:`, error);
     return null;

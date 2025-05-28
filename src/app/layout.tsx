@@ -17,17 +17,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "xavvi.fans",
   description: "Discover and connect with top social media influencers",
-  icons: {
-    icon: [
-      {
-        url: "/xavvi_small_logo.png",
-        sizes: "any",
-        type: "image/png",
-      },
-    ],
-    shortcut: "/xavvi_small_logo.png",
-    apple: "/xavvi_small_logo.png",
-  },
 };
 
 export default function RootLayout({
@@ -37,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/xavvi_small_logo.png" type="image/png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

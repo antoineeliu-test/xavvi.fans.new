@@ -37,7 +37,7 @@ export async function createServerSupabaseClient() {
         },
         set(name: string, value: string, options: CookieOptions) {
           try {
-            cookieStore.set({ name, value, ...options });
+          cookieStore.set({ name, value, ...options });
           } catch (error) {
             // Ignore cookie setting errors in read-only contexts
             console.warn('Failed to set cookie:', error);
@@ -45,7 +45,7 @@ export async function createServerSupabaseClient() {
         },
         remove(name: string, options: CookieOptions) {
           try {
-            cookieStore.set({ name, value: '', ...options });
+          cookieStore.set({ name, value: '', ...options });
           } catch (error) {
             // Ignore cookie removal errors in read-only contexts
             console.warn('Failed to remove cookie:', error);

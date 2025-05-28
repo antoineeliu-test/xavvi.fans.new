@@ -45,6 +45,6 @@ export async function middleware(request: NextRequest) {
 // Only run on auth-related routes
 export const config = {
   matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|api/test-auth|.*\\.png$).*)',
+    '/((?!_next/static|_next/image|favicon.ico|api/.*|.*\\.png$).*)',
   ],
 }; 

@@ -19,7 +19,7 @@ export default function Header() {
             {/* Your logo */}
             {!imageError ? (
               <Image
-                src="/xavvi-logo.png" 
+                src="/xavvi_logo.png" 
                 alt="Xavvi Logo" 
                 width={177} 
                 height={50} 

@@ -3,10 +3,13 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FiUser } from 'react-icons/fi';
+import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Header() {
   const pathname = usePathname();
   const isAdmin = pathname.startsWith('/admin');
+  const [imageError, setImageError] = useState(false);
   
   return (
     <header className="bg-white shadow-sm">
@@ -14,16 +17,27 @@ export default function Header() {
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center">
             {/* Your logo */}
-            <img 
-              src="/xavvi_logo.new.png" 
-              alt="Xavvi Logo" 
-              width="100" 
-              height="100" 
-              className="object-contain w-[100px] h-[100px]"
-              onError={(e) => {
-                console.error('Logo failed to load:', e);
-              }}
-            />
+            {!imageError ? (
+              <Image
+                src="/xavvi-logo.png" 
+                alt="Xavvi Logo" 
+                width={177} 
+                height={50} 
+                className="object-contain h-[50px] w-auto"
+                priority
+                onError={(e) => {
+                  console.error('Logo failed to load:', e);
+                  setImageError(true);
+                }}
+                onLoad={() => {
+                  console.log('Logo loaded successfully');
+                }}
+              />
+            ) : (
+              <div className="h-[50px] px-4 bg-gray-200 flex items-center justify-center text-pink-600 font-bold">
+                xavvi.fans
+              </div>
+            )}
           </Link>
           
           <nav className="flex space-x-6 items-center">

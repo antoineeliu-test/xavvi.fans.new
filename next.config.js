@@ -17,11 +17,32 @@ const nextConfig = {
       static: 180,
     },
   },
-  // Force dynamic rendering for pages that need real-time data
+  // Configure caching headers
   async headers() {
     return [
       {
-        source: '/(.*)',
+        // Cache static images
+        source: '/:all*\\.png',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Cache other static assets
+        source: '/:all*\\.(jpg|jpeg|gif|webp|svg|ico)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Dynamic content - API routes and pages
+        source: '/api/:path*',
         headers: [
           {
             key: 'Cache-Control',

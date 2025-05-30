@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FiUser } from 'react-icons/fi';
-import Image from 'next/image';
 
 export default function Header() {
   const pathname = usePathname();
@@ -14,14 +13,9 @@ export default function Header() {
       <div className="container mx-auto px-4 py-2">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center">
-            <Image
-              src="/logoxavvi.png" 
-              alt="Xavvi Logo" 
-              width={177} 
-              height={50} 
-              className="object-contain h-[50px] w-auto"
-              priority
-            />
+            <div className="text-2xl font-bold text-gray-800">
+              xavvi.fans
+            </div>
           </Link>
           
           <nav className="flex space-x-6 items-center">

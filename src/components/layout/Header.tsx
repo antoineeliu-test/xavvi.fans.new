@@ -15,7 +15,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center">
             <Image
-              src="/xavvi_logo.png" 
+              src="/logoxavvi.png" 
               alt="Xavvi Logo" 
               width={177} 
               height={50} 

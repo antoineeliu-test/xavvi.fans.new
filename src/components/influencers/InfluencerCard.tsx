@@ -28,10 +28,10 @@ export default function InfluencerCard({ influencer }: InfluencerCardProps) {
     <>
       <div 
         onClick={() => setIsModalOpen(true)}
-        className="group cursor-pointer"
+        className="group cursor-pointer h-full"
       >
-        <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-500 border border-white/20 hover:border-pink-300/50">
-          <div className="relative h-72 w-full overflow-hidden">
+        <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-500 border border-white/20 hover:border-pink-300/50 h-full flex flex-col">
+          <div className="relative h-72 w-full overflow-hidden flex-shrink-0">
             {profile_image_url ? (
               <Image
                 src={profile_image_url}
@@ -48,43 +48,43 @@ export default function InfluencerCard({ influencer }: InfluencerCardProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
           
-          <div className="p-6">
+          <div className="p-6 flex-1 flex flex-col">
             <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-pink-600 transition-colors duration-300">
               {name}
             </h3>
             
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-3 h-24 overflow-y-auto">
               {instagram_followers !== undefined && instagram_followers > 0 && (
-                <div className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50 rounded-lg p-2 hover:bg-pink-50 transition-colors duration-200">
-                  <FaInstagram className="text-[#E1306C] text-base" />
+                <div className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50 rounded-lg p-2 hover:bg-pink-50 transition-colors duration-200 h-fit">
+                  <FaInstagram className="text-[#E1306C] text-base flex-shrink-0" />
                   <span className="font-medium">{formatFollowers(instagram_followers)}</span>
                 </div>
               )}
               
               {tiktok_followers !== undefined && tiktok_followers > 0 && (
-                <div className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50 rounded-lg p-2 hover:bg-pink-50 transition-colors duration-200">
-                  <FaTiktok className="text-[#000000] text-base" />
+                <div className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50 rounded-lg p-2 hover:bg-pink-50 transition-colors duration-200 h-fit">
+                  <FaTiktok className="text-[#000000] text-base flex-shrink-0" />
                   <span className="font-medium">{formatFollowers(tiktok_followers)}</span>
                 </div>
               )}
               
               {youtube_followers !== undefined && youtube_followers > 0 && (
-                <div className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50 rounded-lg p-2 hover:bg-pink-50 transition-colors duration-200">
-                  <FaYoutube className="text-[#FF0000] text-base" />
+                <div className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50 rounded-lg p-2 hover:bg-pink-50 transition-colors duration-200 h-fit">
+                  <FaYoutube className="text-[#FF0000] text-base flex-shrink-0" />
                   <span className="font-medium">{formatFollowers(youtube_followers)}</span>
                 </div>
               )}
               
               {twitter_followers !== undefined && twitter_followers > 0 && (
-                <div className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50 rounded-lg p-2 hover:bg-pink-50 transition-colors duration-200">
-                  <FaXTwitter className="text-[#000000] text-base" />
+                <div className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50 rounded-lg p-2 hover:bg-pink-50 transition-colors duration-200 h-fit">
+                  <FaXTwitter className="text-[#000000] text-base flex-shrink-0" />
                   <span className="font-medium">{formatFollowers(twitter_followers)}</span>
                 </div>
               )}
               
               {facebook_followers !== undefined && facebook_followers > 0 && (
-                <div className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50 rounded-lg p-2 hover:bg-pink-50 transition-colors duration-200">
-                  <FaFacebook className="text-[#1877F2] text-base" />
+                <div className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50 rounded-lg p-2 hover:bg-pink-50 transition-colors duration-200 h-fit">
+                  <FaFacebook className="text-[#1877F2] text-base flex-shrink-0" />
                   <span className="font-medium">{formatFollowers(facebook_followers)}</span>
                 </div>
               )}

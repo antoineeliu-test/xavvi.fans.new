@@ -18,10 +18,12 @@ export default function LoginPage() {
   // Show loading while checking authentication
   if (isLoading) {
     return (
-      <div className="max-w-md mx-auto">
-        <div className="bg-white rounded-lg shadow-md overflow-hidden p-8">
-          <div className="text-center">
-            <div className="text-lg">Loading...</div>
+      <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md w-full">
+          <div className="bg-white rounded-lg shadow-md overflow-hidden p-8">
+            <div className="text-center">
+              <div className="text-lg">Loading...</div>
+            </div>
           </div>
         </div>
       </div>
@@ -34,14 +36,16 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="max-w-md mx-auto">
-      <div className="bg-white rounded-lg shadow-md overflow-hidden p-8">
-        <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-gray-900">Admin Login</h1>
-          <p className="text-gray-600 mt-2">Sign in to access the admin dashboard</p>
+    <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full">
+        <div className="bg-white rounded-lg shadow-md overflow-hidden p-8">
+          <div className="text-center mb-8">
+            <h1 className="text-2xl font-bold text-gray-900">Admin Login</h1>
+            <p className="text-gray-600 mt-2">Sign in to access the admin dashboard</p>
+          </div>
+          
+          <LoginForm />
         </div>
-        
-        <LoginForm />
       </div>
     </div>
   );

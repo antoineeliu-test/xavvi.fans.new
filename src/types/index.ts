@@ -8,6 +8,7 @@ export interface Influencer {
   twitter_followers?: number;
   facebook_followers?: number;
   bio?: string;
+  website?: string;
   profile_image_url?: string;
   gallery_images?: string[];
   created_at: string;
@@ -23,6 +24,7 @@ export interface InfluencerFormData {
   twitter_followers?: number;
   facebook_followers?: number;
   bio?: string;
+  website?: string;
   profile_image_url?: string;
   gallery_images?: string[];
 } 

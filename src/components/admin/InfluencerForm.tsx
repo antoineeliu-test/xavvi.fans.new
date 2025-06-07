@@ -20,6 +20,7 @@ const influencerSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   slug: z.string().min(2, 'Slug must be at least 2 characters').regex(/^[a-z0-9-]+$/, 'Slug can only contain lowercase letters, numbers, and hyphens'),
   bio: z.string().optional(),
+  website: z.string().url('Please enter a valid URL (e.g., https://example.com)').optional().or(z.literal('')),
   instagram_followers: z.coerce.number().optional(),
   tiktok_followers: z.coerce.number().optional(),
   youtube_followers: z.coerce.number().optional(),
@@ -50,6 +51,7 @@ export default function InfluencerForm({ influencer, isEditing = false }: Influe
       name: influencer?.name || '',
       slug: influencer?.slug || '',
       bio: influencer?.bio || '',
+      website: influencer?.website || '',
       instagram_followers: influencer?.instagram_followers,
       tiktok_followers: influencer?.tiktok_followers,
       youtube_followers: influencer?.youtube_followers,
@@ -162,6 +164,7 @@ export default function InfluencerForm({ influencer, isEditing = false }: Influe
         name: data.name,
         slug: data.slug,
         bio: data.bio,
+        website: data.website,
         instagram_followers: data.instagram_followers,
         tiktok_followers: data.tiktok_followers,
         youtube_followers: data.youtube_followers,
@@ -226,6 +229,14 @@ export default function InfluencerForm({ influencer, isEditing = false }: Influe
             error={errors.bio?.message}
             placeholder="About this influencer..."
             rows={6}
+          />
+          
+          <Input
+            label="Website"
+            {...register('website')}
+            error={errors.website?.message}
+            placeholder="https://example.com"
+            type="url"
           />
         </div>
         
